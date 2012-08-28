@@ -19,7 +19,7 @@ Wishlist
 Project Page
 ------------
 
-The project page can be found at http://ankitdaf.com/Projects/WirelessKeyboard
+The project page can be found at http://ankitdaf.com/projects/WirelessKeyboard
 
 Feel free to fork,branch out, contribute and hack away !
 
