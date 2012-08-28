@@ -13,7 +13,7 @@ Wishlist
 
 1. Extend this to include support for Bluetooth input as well
 2. Add a Python client to begin with
-2a. Package the Python client to run as a native Linux installed command
+ 2a. Package the Python client to run as a native Linux installed command
 3. Add Preference screen to show Android Server IP address
 
 Project Page
@@ -23,4 +23,4 @@ The project page can be found at http://ankitdaf.com/Projects/WirelessKeyboard
 
 Feel free to fork,branch out, contribute and hack away !
 
-Ping me at me@ankitdaf.com if you wish to appreciate/criticize/contribute
+Ping me at me@ankitdaf.com if you wish to appreciate/criticize/contribute to the project
