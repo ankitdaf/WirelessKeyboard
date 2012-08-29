@@ -25,13 +25,12 @@ def main(argv=None):
     """
     if(not config.read(configfile)):
         create_config()
-    else:
-        host = fetch_config()
+    host = fetch_config()
     if(len(sys.argv)>1):
         msg = ' '.join(sys.argv[1:])
         send(msg,host)
     
-def setup_config():
+def create_config():
     """
     Generate configuration files if they don't exist
     """
