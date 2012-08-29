@@ -12,9 +12,7 @@ Wishlist
 --------
 
 1. Extend this to include support for Bluetooth input as well
-2. Add a Python client to begin with
- 2a. Package the Python client to run as a native Linux installed command
-3. Add Preference screen to show Android Server IP address
+2. Add Preference screen to show Android Server IP address
 
 Project Page
 ------------

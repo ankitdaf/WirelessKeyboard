@@ -22,9 +22,9 @@ Additionally, to use it as a installed command like:
 $ wikey "your message goes here" 
 ```
 
-1.Rename wikey.py to wikey
-2.Copy wikey and wireless_keyboard.cfg to /usr/local/bin
-3.Type away
+1. Rename wikey.py to wikey
+2. Copy wikey and wireless_keyboard.cfg to /usr/local/bin
+3. Type away
 
 Wishlist
 --------
