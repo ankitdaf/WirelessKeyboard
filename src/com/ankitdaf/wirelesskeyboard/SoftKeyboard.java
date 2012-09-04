@@ -24,6 +24,7 @@ import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.text.method.MetaKeyKeyListener;
+import android.util.Log;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
@@ -76,6 +77,8 @@ public class SoftKeyboard extends InputMethodService
     private String mWordSeparators;
     
     private static final String WIRELESS_DATA_RECEIVED = "com.ankitdaf.wirelesskeyboard.wireless";
+    private static final String IP_ADDRESS_SET = "com.ankitdaf.wirelesskeyboard.ip";
+    
     /**
      * Main initialization of the input method component.  Be sure to call
      * to super class.
@@ -692,12 +695,17 @@ public class SoftKeyboard extends InputMethodService
     public void onRelease(int primaryCode) {
     }
     
+    @Override
+    public void onDestroy(){
+    	super.onDestroy();
+    	unregisterReceiver(wirelessreceiver);
+    }
+    
     private BroadcastReceiver wirelessreceiver = new BroadcastReceiver() {
 		
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			String action = intent.getAction();
-			
 			if(action.equals(Wifi.WIRELESS_DATA_RECEIVED))
 			{
 				InputConnection ic = getCurrentInputConnection();
@@ -708,4 +716,5 @@ public class SoftKeyboard extends InputMethodService
 		}
 		
 	};
+  
 }
