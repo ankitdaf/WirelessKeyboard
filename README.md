@@ -12,7 +12,6 @@ Wishlist
 --------
 
 1. Extend this to include support for Bluetooth input as well
-2. Add Preference screen to show Android Server IP address
 
 Project Page
 ------------

@@ -19,7 +19,6 @@ public class Preferences extends PreferenceActivity implements
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		registerReceiver(ipreceiver, new IntentFilter(IP_ADDRESS_SET));
 		addPreferencesFromResource(R.layout.prefs);
@@ -28,6 +27,14 @@ public class Preferences extends PreferenceActivity implements
 			ip.setSummary(summary);
 		}
 
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if (!summary.equals("")) {
+			ip.setSummary(summary);
+		}
 	}
 
 	public void commitippref() {
@@ -56,9 +63,10 @@ public class Preferences extends PreferenceActivity implements
 			String action = intent.getAction();
 			if (action.equals(IP_ADDRESS_SET)) {
 				String data = intent.getExtras().getString(Wifi.IP_ADDRESS);
-				ip.setSummary(data);
 				summary = data;
+				ip.setSummary(summary);
 			}
+			
 
 		}
 	};
