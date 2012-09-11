@@ -30,7 +30,7 @@ Wishlist
 --------
 
 1. Do away with the exclamation marks in the message
-2. Provide a text based menu interface
+2. Provide a text based options to change configuration
 
 Project Page
 ------------

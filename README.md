@@ -11,7 +11,8 @@ For now, the user has to figure out the Wifi server (Android IP address) himself
 Wishlist
 --------
 
-1. Extend this to include support for Bluetooth input as well
+1. Add interactive terminal mode, so you can leave a shell running like a console input to your device,instead of invoking the script multiple times
+2. Extend this to include support for Bluetooth input as well
 
 Project Page
 ------------
