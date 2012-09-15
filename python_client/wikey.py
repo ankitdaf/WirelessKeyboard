@@ -4,23 +4,26 @@
 Copyright Ankit Daftery,2012
 """
 
-import sys,ConfigParser
+import sys,ConfigParser,time,os
 from socket import socket, AF_INET, SOCK_STREAM
     
 config = ConfigParser.RawConfigParser()
 configfile = 'wireless_keyboard.cfg'
+logfile = os.path.expanduser("~/.wikey_log.txt")
 
 class Wikey:
   """
   A class to handle the wireless connection
   """
-  host=None  
+  host=None
+  log=None  
   def __init__(self):
     """
     Initialise the connection
     """
     if(not config.read(configfile)):
       self.create_config()
+    self.log=False
     self.host=self.fetch_config()
     if(len(sys.argv)>1):
       msg = ' '.join(sys.argv[1:])
@@ -32,6 +35,10 @@ class Wikey:
     """
     mySocket = socket( AF_INET, SOCK_STREAM )
     mySocket.connect(self.host)
+    if(self.log):
+      logger=open(logfile,"a")
+      logger.write(time.asctime()+" " + text+"\n")
+      logger.close()
     mySocket.sendto(text,self.host)
     mySocket.close()
     
@@ -42,6 +49,7 @@ class Wikey:
     config.add_section('wifi')
     config.set('wifi','ip_address','192.168.2.3')
     config.set('wifi','port',26015)
+    config.set('wifi','log','True')
     with open('wireless_keyboard.cfg','wb') as configfile:
       config.write(configfile)
 
@@ -52,6 +60,7 @@ class Wikey:
       config.read(configfile)
       SERVER_IP = config.get("wifi","ip_address")
       PORT = int(config.get("wifi","port"))
+      self.log=bool(config.get("wifi","log"))
       return (SERVER_IP,PORT)
 
 if __name__ == "__main__":

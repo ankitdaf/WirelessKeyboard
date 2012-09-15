@@ -26,6 +26,13 @@ $ wikey "your message goes here"
 2. Copy wikey and wireless_keyboard.cfg to /usr/local/bin
 3. Type away
 
+Logging
+-------
+
+Logging can be toggled by setting the "log" field as "True" or "False" in the wireless_config.cfg file which can be found in your home folder
+The logfile notes the time and the message typed.
+The logfile can be found in the home folder with the name wikey_log.txt
+
 Wishlist
 --------
 
